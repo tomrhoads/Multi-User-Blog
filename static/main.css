@@ -1,0 +1,164 @@
+body {
+    position: relative;
+    font-family: 'Nova Flat', cursive;
+    font-size: 14px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+}
+
+.login-area {
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.comment-area {
+    font-size: 13px;
+    color: gray;
+    position: relative;
+}
+
+.like-area {
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.comment-link {
+    color: gray;
+    text-decoration: none;
+}
+
+.login-link {
+    color: gray;
+    text-decoration: none;
+}
+
+.login-link:visited {
+    color: gray;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+
+label {
+  display: block;
+  font-size: 20px;
+}
+
+label + label {
+    margin-top: 20px;
+}
+
+input[type=text] {
+    width: 500px;
+    font-size: 20px;
+    padding: 2px;
+    font-family: monospace;
+}
+
+textarea {
+  width: 500px;
+  height: 400px;
+  font-size: 17px;
+  font-family: 'Nova Flat', cursive;
+}
+
+input[type=submit] {
+  font-size: 24px;
+}
+
+.main-title {
+    display: block;
+    color: #0275D8;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 'Nova Flat', cursive;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+.post + .post {
+    margin-top: 15px;
+}
+
+.post-heading {
+    position: relative;
+    border-bottom: 3px solid #666;
+}
+
+.post-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.post-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #999;
+
+}
+
+.post-content {
+    margin-top: 5px;
+}
+
+.comment {
+    margin-top: 15px
+}
+
+.comment + .comment {
+    margin-top: 15px;
+}
+
+.comment-heading {
+    position: relative;
+    border-bottom: 3px solid #666;
+}
+
+.comment-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.comment-author {
+    margin-right: 10px
+}
+
+.comment-date {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #999;
+}
+
+.comment-content {
+    margin-top: 5px;
+}
+
+.post-comments {
+    margin: 10px;
+}
+
+.separator {
+    margin: 10px;
+}

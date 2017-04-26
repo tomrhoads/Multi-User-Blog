@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  {{post.render() | safe}}
+  <br>
+  {% if user %}
+  	{% if user.name == post.author %}
+    	<a href="/blog/{{post.key().id()}}/deletepost" type="button" class="btn btn-danger btn-sm">Delete Post</a>
+    	<a href="/blog/{{post.key().id()}}/editpost" type="button" class="btn btn-secondary btn-sm">Edit Post</a>
+
+	{% endif %}
+	<a href="/blog/{{post.key().id()}}/like" class="btn btn-secondary btn-sm" type="button">Like ({{post.likes}})</a>
+{% endif %}
+  <br>
+  <br>
+  {% if user and post.comments %}
+
+
+<div class="post-comments">
+    <h4>Comments ({{post.comments.count()}})</h4>
+
+    {% for c in post.comments %}
+
+    <div class="comment">
+        <div class="comment-author">{{ c.parent().name }} says:</div>
+        <p class="comment-content">{{ c.comment }}</p>
+        {% if user.name == c.author %}
+        <a class="btn btn-secondary btn-sm" type="button" href="/blog/{{post.key().id()}}/editcomment/{{c.key().id()}}">Edit</a>
+        <a class="btn btn-danger btn-sm" type="button" href="/blog/{{post.key().id()}}/deletecomment/{{c.key().id()}}">Delete</a>
+        <br>
+        <br>
+        {% endif %}
+    </div>
+
+    {% endfor %}
+    
+    <a class="btn btn-success btn-sm" type="button" href="/blog/{{post.key().id()}}/newcomment">Add New Comment</a>
+
+    {% endif %}
+
+</div>
+	<br>
+  	<a class="btn btn-primary btn-sm" href="/blog">Back to Home</a>
+{% endblock %}
