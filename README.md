@@ -23,7 +23,7 @@ Google Chrome web browser
 
 RUNNING
 
-Live version running at http://intro-to-backend-142722.appspot.com/blog 
+Live version running at https://multi-user-blog-209320.appspot.com/blog
 
 Running Locally:
 
