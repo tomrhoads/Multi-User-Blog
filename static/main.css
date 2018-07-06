@@ -1,3 +1,4 @@
+/*
 body {
     position: relative;
     font-family: 'Nova Flat', cursive;
@@ -6,6 +7,11 @@ body {
     margin: 0 auto;
     padding: 10px;
     color: #333;
+}
+*/
+
+a {
+    text-decoration: none!important;
 }
 
 .login-area {
@@ -59,7 +65,7 @@ h2 {
 }
 
 label {
-  display: block;
+  display: block!important;
   font-size: 20px;
 }
 
@@ -67,23 +73,26 @@ label + label {
     margin-top: 20px;
 }
 
+/*
 input[type=text] {
     width: 500px;
     font-size: 20px;
     padding: 2px;
     font-family: monospace;
 }
+*/
 
 textarea {
-  width: 500px;
-  height: 400px;
+  width: 100%;
   font-size: 17px;
   font-family: 'Nova Flat', cursive;
 }
 
+/*
 input[type=submit] {
   font-size: 24px;
 }
+*/
 
 .main-title {
     display: block;
@@ -96,13 +105,34 @@ input[type=submit] {
     text-decoration: none;
 }
 
+.panel-shadow {
+    box-shadow: rgba(0, 0, 0, 0.3) 7px 7px 7px;
+    border-radius: 10px
+}
+
+.panel-white {
+    border: 1px solid #dddddd;
+    background-color: white;
+    border-radius: 10px;
+    padding: 6px;
+    margin-bottom: 10px
+}
+
+#postContainer {
+    padding-bottom: 15px;
+    padding-top: 30px
+}
+
+.postRow {
+    margin-bottom: 19px
+}
+
 .post + .post {
     margin-top: 15px;
 }
 
 .post-heading {
     position: relative;
-    border-bottom: 3px solid #666;
 }
 
 .post-title {
@@ -120,6 +150,30 @@ input[type=submit] {
 
 .post-content {
     margin-top: 5px;
+}
+
+#postHeadText {
+    font-weight: lighter;
+}
+
+#commentSubject {
+    margin-bottom: 3px
+}
+
+#commentContent {
+    margin-bottom: 30px
+}
+
+.fa-comments-o {
+    font-size: 25px !important;
+    padding-left: 16px;
+    color: gray;
+}
+
+.fa-home {
+    font-size: 25px !important;
+    padding-left: 6px;
+    color: gray;
 }
 
 .comment {
@@ -159,6 +213,57 @@ input[type=submit] {
     margin: 10px;
 }
 
+h3.commentsHead {
+    color: #0275d8 !important;
+    font-weight: lighter !important
+}
+
 .separator {
     margin: 10px;
+}
+
+#logoutLoginIcon, #homeIcon{
+    color:rgba(0,0,0,.8);
+    padding: 0px 4px 0px 4px;
+    -ms-transform: translateY(1px); /* IE 9 */
+    -webkit-transform: translateY(1px); /* Safari */
+    transform: translateY(1px);
+}
+
+.fa-sign-out {
+    padding-left: 3px !important;
+    transform: translateY(1px) !important;
+}
+
+#signUpHeader {
+    color: #0275d8;
+    text-align: center;
+}
+
+#signUpContainer {
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: gray;
+    padding: 10px 0px 10px 0px;
+    margin-bottom: 15px
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+#signInButton {
+    margin-top: 29px
+}
+
+#buttonRow {
+    float: none !important;
+    padding-left: 13px
+}
+
+button.btn.btn-secondary#postFoot {
+    margin: 0px 0px 0px 0px;
 }

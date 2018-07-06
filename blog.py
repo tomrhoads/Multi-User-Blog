@@ -345,7 +345,8 @@ class Like(BlogHandler):
             logged_in_user = self.user.name
 
             if author == logged_in_user or logged_in_user in post.liker:
-                self.write("There was an error liking this post")
+                #self.write("There was an error liking this post")
+                self.render('likeserror.html')
             else:
                 post.likes += 1
                 post.liker.append(logged_in_user)

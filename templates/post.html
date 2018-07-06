@@ -1,18 +1,25 @@
-<div class="post">
-  <div class="post-heading">
-    <div class="post-title">
-      <a href="/blog/{{p.key().id()}}">{{p.subject}}</a>
-    </div>
+<div class="container" id="postContainer">
+  <div class="row postRow">
+    <div class="col-sm-8 blog-main">
+      <div class="blog-post">
+        <div class="post-heading">
+          <h2 class="blog-post-title">
+            <a href="/blog/{{p.key().id()}}" id="postHeadText">{{p.subject}}</a>
+          </h2>
 
-    <div class="post-date">
-      {{p.created.strftime("%b %d, %Y")}} by: {{p.author}}
-    </div>
-  </div>
+          <p class="blog-post-meta">
+            {{p.created.strftime("%b %d, %Y")}} by: {{p.author}}
+          </p>
+        </div>
+        <hr>
 
-  <div class="post-content">
-    {{p._render_text | safe}}
+        <div class="post-content">
+          {{p._render_text | safe}}
+        </div>
+      <!-- <div >
+      <a href="/blog/{{p.key().id()}}/newcomment"><button class="btn btn-secondary" href="/blog/{{p.key().id()}}/newcomment">Comment <span class="fa fa-commenting-o"></span></button></a>
+    </div> -->
   </div>
-  <a class="btn btn-primary btn-sm" type="button" href="/blog/{{p.key().id()}}/newcomment">Add Comment</a>
-  <br>
-  <br>
+</div>
+</div>
 </div>

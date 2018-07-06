@@ -1,34 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="container">
 
-    <h2>Login / <a class="btn btn-success" href="/signup" type="button">Register</a></h2>
-    <form method="post">
-      <table>
-        <tr>
-          <td class="label">
-            Username
-          </td>
-          <td>
-            <input type="text" name="username" value="{{username}}">
-          </td>
-        </tr>
+  <form class="form-signin" method="post">
+    <!-- <h2 class="form-signin-heading">Login</h2> -->
 
-        <tr>
-          <td class="label">
-            Password
-          </td>
-          <td>
-            <input type="password" name="password" value="">
-          </td>
-        </tr>
-      </table>
+    
+    <label for="username">Username</label>
 
-      <div class="error">
-        {{error}}
-      </div>
 
-      <input type="submit">
-    </form>
+    <input type="text" class="form-control" name="username" placeholder="enter username" value="{{username}}" required="autofocus">
+    
+
+    
+    <label>Password</label>
+
+
+    <input type="password" class="form-control" name="password" placeholder="enter password" value="">
+    
+
+    <div class="error">
+      {{error}}
+    </div>
+
+    <button type="submit" class="btn btn-secondary" id="signInButton">Sign in</button>
+  </form>
+</div>
 
 {% endblock %}

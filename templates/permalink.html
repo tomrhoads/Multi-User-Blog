@@ -2,44 +2,65 @@
 
 {% block content %}
 
-  {{post.render() | safe}}
-  <br>
-  {% if user %}
-  	{% if user.name == post.author %}
-    	<a href="/blog/{{post.key().id()}}/deletepost" type="button" class="btn btn-danger btn-sm">Delete Post</a>
-    	<a href="/blog/{{post.key().id()}}/editpost" type="button" class="btn btn-secondary btn-sm">Edit Post</a>
+<div class="container">
+  <div class="row">
+    
+    {{post.render() | safe}}
+    
+    {% if user %}
+    
+      {% if user.name == post.author %}
+    <div class="col-sm-9" id="buttonRow">
+        <a href="/blog/{{post.key().id()}}/deletepost"><button class="btn btn-secondary btn-sm"><span class="fa fa-trash-o"></span></button></a>
+        <a href="/blog/{{post.key().id()}}/editpost"><button class="btn btn-secondary btn-sm"><span class="fa fa-edit"></span></button></a>
 
-	{% endif %}
-	<a href="/blog/{{post.key().id()}}/like" class="btn btn-secondary btn-sm" type="button">Like ({{post.likes}})</a>
-{% endif %}
-  <br>
-  <br>
-  {% if user and post.comments %}
+      {% endif %}
+        <a href="/blog/{{post.key().id()}}/newcomment"><button class="btn btn-secondary btn-sm" id="postFoot" href="/blog/{{post.key().id()}}/newcomment"><span class="fa fa-commenting-o"> {{post.comments.count()}}</span></button></a>
+        <a href="/blog/{{post.key().id()}}/like"><button class="btn btn-secondary btn-sm" id="postFoot"><span class="fa fa-thumbs-o-up"></span> {{post.likes}}</button></a>
+    </div>
+    {% endif %}
+<hr>
+  </div>
+    
+    {% if user and post.comments %}
+  
 
 
-<div class="post-comments">
-    <h4>Comments ({{post.comments.count()}})</h4>
+  <div class="post-comments">
+    <h3 class="commentsHead">Comments <!-- ({{post.comments.count()}}) --></h3>
 
     {% for c in post.comments %}
 
     <div class="comment">
+      <div class="panel panel-white panel-shadow">
         <div class="comment-author">{{ c.parent().name }} says:</div>
-        <p class="comment-content">{{ c.comment }}</p>
-        {% if user.name == c.author %}
-        <a class="btn btn-secondary btn-sm" type="button" href="/blog/{{post.key().id()}}/editcomment/{{c.key().id()}}">Edit</a>
-        <a class="btn btn-danger btn-sm" type="button" href="/blog/{{post.key().id()}}/deletecomment/{{c.key().id()}}">Delete</a>
-        <br>
-        <br>
-        {% endif %}
+        <div class="row">
+          <div class="col-sm-9 offset-sm-1">
+            <p class="comment-content">{{ c.comment }}</p>
+            {% if user.name == c.author %}
+            <a class="btn btn-secondary btn-sm" type="button" href="/blog/{{post.key().id()}}/editcomment/{{c.key().id()}}">Edit</a>
+            <a class="btn btn-secondary btn-sm" type="button" href="/blog/{{post.key().id()}}/deletecomment/{{c.key().id()}}">Delete</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
     </div>
 
     {% endfor %}
     
-    <a class="btn btn-success btn-sm" type="button" href="/blog/{{post.key().id()}}/newcomment">Add New Comment</a>
+    <a href="/blog/{{post.key().id()}}/newcomment"><span class="fa fa-comments-o"></span></a>
 
-    {% endif %}
+    <a  href="/blog"><span class="fa fa-home"></span></a>
+  </div>
 
+  {% else %}
+
+  <a  href="/blog"><span class="fa fa-home"></span></a>
 </div>
-	<br>
-  	<a class="btn btn-primary btn-sm" href="/blog">Back to Home</a>
+
+{% endif %}
+
+  <!-- </div>
+  <a  href="/blog"><span class="fa fa-home"></span></a>
+</div> -->
 {% endblock %}
