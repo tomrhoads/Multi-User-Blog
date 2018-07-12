@@ -267,3 +267,9 @@ h3.commentsHead {
 button.btn.btn-secondary#postFoot {
     margin: 0px 0px 0px 0px;
 }
+
+@media screen and (max-width: 767px) {
+    .display-1 {
+        font-size: 4rem !important;
+    }
+}
